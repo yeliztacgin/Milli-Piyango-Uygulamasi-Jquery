@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>JQuery-Milli Piyango Çekiliş Uygulaması</title>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        #dis {
+            width: 100%;
+            height: 200px;
+            background-color:aliceblue;
+        }
+
+        .c1 {
+            width: 150px;
+            height: 150px;
+            background-color:chartreuse;
+            float: left;
+            margin-left: 35px;
+            margin-top: 25px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 128px;
+            font-weight: bold;
+            line-height: 150px;
+        }
+
+        #btn {
+            width: 180px;
+            height: 70px;
+            background-color: cornflowerblue;
+            margin: auto;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <div id="dis">
+
+        <div id="div1" class="c1"></div>
+        <div id="div2" class="c1"></div>
+        <div id="div3" class="c1"></div>
+        <div id="div4" class="c1"></div>
+        <div id="div5" class="c1"></div>
+        <div id="div6" class="c1"></div>
+        <div id="div7" class="c1"></div>
+
+    </div>
+
+    <br />
+    <button id="btn">Tıkla</button>
+
+    <script>
+        $("#btn").click(function () {
+
+            function sayiUret() {
+                return Math.round(Math.random() * 9);
+
+
+            }
+            $(".c1").hide();
+
+
+            $("#div1").html(sayiUret()).slideDown(2000);
+            $("#div2").html(sayiUret()).slideDown(2000);
+            $("#div3").html(sayiUret()).slideDown(2000);
+            $("#div4").html(sayiUret()).slideDown(2000);
+            $("#div5").html(sayiUret()).slideDown(2000);
+            $("#div6").html(sayiUret()).slideDown(2000);
+            $("#div7").html(sayiUret()).slideDown(2000);
+
+            setTimeout(function () {
+                $(".c1").fadeOut(1000, function () {
+                    $(this).fadeIn(1000, function () {
+                        $(this).fadeOut(1000, function () {
+                            $(this).fadeIn(1000, function () {
+
+                            })
+                        })
+                    })
+
+                })
+
+
+         });
+        });
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>
